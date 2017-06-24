@@ -4,9 +4,9 @@ Welcome to this litle symfony project based on [Symfony Standard Edition][2] .
 
 ## Requirements
 
-* PHP >= 5.5.9 installed and set into your environment var (enable pdo sqlite extention in your php.ini)
-* Git installed and set into your environment var
-* Composer installed and set into your environment var => https://getcomposer.org/doc/00-intro.md
+* [PHP][3] >= 5.5.9 installed and set into your environment var (enable pdo sqlite extention in your php.ini)
+* [Git][4] installed and set into your environment var
+* [Composer][5] installed and set into your environment var
 
 > **INSTALLATION NOTE**
 >
@@ -15,7 +15,7 @@ Welcome to this litle symfony project based on [Symfony Standard Edition][2] .
 >	  * Run the following cmd
 >
 >     ```
->     git clone git clone https://github.com/Picrrr/test-sts.git ./
+>     git clone https://github.com/Picrrr/test-sts.git ./
 >     composer install
 >     php bin/console server:run
 >     ```
@@ -28,3 +28,6 @@ released under the MIT or BSD license.
 
 [1]:  https://symfony.com/doc/3.3/setup.html
 [2]:  https://github.com/symfony/symfony-standard
+[3]:  http://windows.php.net/download/
+[4]:  https://git-scm.com/downloads
+[5]:  https://getcomposer.org/doc/00-intro.md#using-the-installer
