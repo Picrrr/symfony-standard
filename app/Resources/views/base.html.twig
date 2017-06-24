@@ -2,12 +2,46 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>{% block title %}TEST STS WELCOME!{% endblock %}</title>
+        {% block stylesheets %}
+            <!-- Bootstrap -->
+            <link href="css/bootstrap.css" rel="stylesheet">
+            <!-- Other Css -->
+            <link href="bootstrap-table/bootstrap-table.min.css" rel="stylesheet">
+        {% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="{{ path('index') }}">TEST STS</a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        {% set route = app.request.attributes.get('_route') %}
+                        <li {{ route ==  'index' ? 'class="active"' }}><a href="{{ path('index') }}">List</a></li>
+                        <li {{ route ==  'add' ? 'class="active"' }}><a href="{{ path('add') }}">Add</a></li>
+                    </ul>
+                </div><!--/.nav-collapse -->
+            </div>
+        </nav>
+
+        {% block body %}
+        {% endblock %}
+        {% block javascripts %}
+            <!-- jQuery (necessary for Bootstraps JavaScript plugins) -->
+            <script src="{{ asset('js/jquery.js') }}"></script>
+            <!-- Include all JavaScripts, compiled by Assetic -->
+            <script src="{{ asset('js/bootstrap.js') }}"></script>
+            <!-- Include all other JavaScripts -->
+            <script src="bootstrap-table/bootstrap-table.min.js"></script>
+        {% endblock %}
     </body>
 </html>

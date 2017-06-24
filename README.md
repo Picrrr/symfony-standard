@@ -5,6 +5,13 @@ Welcome to this litle symfony project based on [Symfony Standard Edition][2] .
 ## Requirements
 
 * [PHP][3] >= 5.5.9 installed and set into your environment var (enable pdo sqlite extention in your php.ini)
+* Edit your php.ini.
+    * Enable the following extention 
+    `php_openssl.dll` 
+    `php_pdo_mysql.dll` 
+    `php_pdo_sqlite.dll`
+    * Enable & set `date.timezone = UTC`
+    
 * [Git][4] installed and set into your environment var
 * [Composer][5] installed and set into your environment var
 
