@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container-fluid">
+        <div class="fixed-table-loading" style="top: 42px;">Loading, please wait...</div>
+        <table data-toggle="table"
+               data-search="true"
+               data-show-columns="true"
+               data-mobile-responsive="true"
+               data-search="true"
+               data-pagination="true"
+        >
+            <thead>
+            <tr>
+                <th data-sortable="true">Surname</th>
+                <th data-sortable="true">Forname</th>
+                <th data-sortable="true">Home Phone</th>
+                <th data-sortable="true">CellPhone</th>
+                <th data-sortable="true">Department</th>
+                <th data-width="200"
+                    data-align="center"
+                >Edit</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for result in results %}
+                <tr>
+                    <td>{{ result.surname }}</td>
+                    <td>{{ result.forname }}</td>
+                    <td>{{ result.homephone }}</td>
+                    <td>{{ result.cellphone }}</td>
+                    <td>{{ result.department | strPadLeft(2,0) }}</td>
+                    <td>
+                        <a class="btn btn-primary" href="{{ path('edit', {'id': result.id }) }}" role="button">
+                            <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Edit
+                        </a>
+                        <a class="btn btn-danger" href="{{ path('delete', {'id': result.id }) }}" role="button" aria-label="delete">
+                            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                        </a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
+
+
+

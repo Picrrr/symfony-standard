@@ -78,6 +78,8 @@ assetic:
             inputs:
                 - %kernel.root_dir%/../vendor/twbs/bootstrap/less/bootstrap.less
                 - %kernel.root_dir%/../vendor/braincrafted/bootstrap-bundle/Braincrafted/Bundle/BootstrapBundle/Resources/less/form.less
+                - %kernel.root_dir%/../src/AppBundle/Ressources/public/css/bootstrap-table.min.css
+                - %kernel.root_dir%/../src/AppBundle/Ressources/public/css/main.css
             filters:
                 - lessphp
                 - cssrewrite
@@ -97,6 +99,8 @@ assetic:
                 - %kernel.root_dir%/../vendor/twbs/bootstrap/js/tab.js
                 - %kernel.root_dir%/../vendor/twbs/bootstrap/js/affix.js
                 - %kernel.root_dir%/../vendor/braincrafted/bootstrap-bundle/Braincrafted/Bundle/BootstrapBundle/Resources/js/bc-bootstrap-collection.js
+                - %kernel.root_dir%/../vendor/braincrafted/bootstrap-bundle/Braincrafted/Bundle/BootstrapBundle/Resources/js/bc-bootstrap-collection.js
+                - %kernel.root_dir%/../src/AppBundle/Ressources/public/js/bootstrap-table.min.js
             output: js/bootstrap.js
         jquery:
             inputs:

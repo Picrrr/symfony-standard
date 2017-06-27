@@ -5,7 +5,8 @@
     "description": "Test STS based on \"Symfony Standard Edition\"",
     "autoload": {
         "psr-4": {
-            "AppBundle\\": "src/AppBundle"
+            "Component\\": "src/Component/",
+            "AppBundle\\": "src/AppBundle/"
         },
         "classmap": [ "app/AppKernel.php", "app/AppCache.php" ]
     },
@@ -19,7 +20,7 @@
         "doctrine/doctrine-bundle": "^1.6",
         "doctrine/orm": "^2.5",
         "incenteev/composer-parameter-handler": "^2.0",
-        "jquery/jquery": "1.12.*",
+        "jquery/jquery": "1.12.0",
         "oyejorge/less.php": "v1.7.0.14",
         "sensio/distribution-bundle": "^5.0.19",
         "sensio/framework-extra-bundle": "^3.0.2",
@@ -27,7 +28,7 @@
         "symfony/monolog-bundle": "^3.1.0",
         "symfony/polyfill-apcu": "^1.0",
         "symfony/symfony": "3.3.*",
-        "twbs/bootstrap": "3.0.*",
+        "twbs/bootstrap": "3.0.3",
         "twig/twig": "^1.0||^2.0"
     },
     "require-dev": {

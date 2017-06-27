@@ -1,29 +1,41 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <div class="container-fluid">
-        <table data-toggle="table">
-            <thead>
-            <tr>
-                <th>Surname</th>
-                <th>Forname</th>
-                <th>Home Phone</th>
-                <th>CellPhone</th>
-                <th>Department</th>
-            </tr>
-            </thead>
-            <tbody>
-            {% for result in results %}
-                <tr>
-                    <td>{{ result.surname }}</td>
-                    <td>{{ result.forname }}</td>
-                    <td>{{ result.homephone }}</td>
-                    <td>{{ result.cellphone }}</td>
-                    <td>{{ result.department }}</td>
-                </tr>
-            {% endfor %}
-            </tbody>
-        </table>
+    <div class="container">
+        <!-- Main jumbotron for a primary marketing message or call to action -->
+        <div class="jumbotron">
+            <h1>Hello!</h1>
+            <p>This is a simple CMS based on symfony 3.3.*</p>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">What's inside</h3>
+                    </div>
+                    <div class="panel-body">
+                        <ul>
+                            <li>Twig</li>
+                            <li>Doctrine</li>
+                            <li>JQuery => 1.12.0</li>
+                            <li>Bootstrap => 3.0.3</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <p>
+                    <a class="btn btn-primary btn-lg" href="{{ path('list') }}" role="button">
+                        <span class="glyphicon glyphicon-list" aria-hidden="true"></span> See all phone directory
+                    </a>
+                </p>
+                <p>
+                    <a class="btn btn-primary btn-lg" href="{{ path('add') }}" role="button">
+                        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add a phone directory
+                    </a>
+                </p>
+            </div>
+        </div>
     </div>
 {% endblock %}
 

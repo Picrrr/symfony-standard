@@ -33,3 +33,9 @@ services:
     # AppBundle\Service\ExampleService:
     #     arguments:
     #         $someArgument: 'some_value'
+
+    twig.extension.str_pad_extention:
+        class: Component\Twig\StrPadExtension
+        public: false
+        tags:
+            - { name: twig.extension }

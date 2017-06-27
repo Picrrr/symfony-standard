@@ -3,16 +3,16 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>{% block title %}TEST STS WELCOME!{% endblock %}</title>
+        <title>{% block title %}TEST STS !{% endblock %}</title>
         {% block stylesheets %}
-            <!-- Bootstrap -->
-            <link href="css/bootstrap.css" rel="stylesheet">
-            <!-- Other Css -->
-            <link href="bootstrap-table/bootstrap-table.min.css" rel="stylesheet">
+            <!-- Bootstrap & Bootstrap add-ons & global css // see app\config\config.yml for src file path -->
+            <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet">
         {% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
+        <!-- nav -->
+        {% set route = app.request.attributes.get('_route') %}
         <nav class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
@@ -21,13 +21,22 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="{{ path('index') }}">TEST STS</a>
+                    <a class="navbar-brand {{ route ==  'index' ? ' active' }}" href="{{ path('index') }}">
+                         <span class=" glyphicon glyphicon-home" aria-hidden="true"></span> TEST STS
+                    </a>
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        {% set route = app.request.attributes.get('_route') %}
-                        <li {{ route ==  'index' ? 'class="active"' }}><a href="{{ path('index') }}">List</a></li>
-                        <li {{ route ==  'add' ? 'class="active"' }}><a href="{{ path('add') }}">Add</a></li>
+                        <li {{ route ==  'list' ? 'class="active"' }}>
+                            <a href="{{ path('list') }}">
+                                <span class="glyphicon glyphicon-list" aria-hidden="true"></span> List
+                            </a>
+                        </li>
+                        <li {{ route ==  'add' ? 'class="active"' }}>
+                            <a href="{{ path('add') }}">
+                                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add
+                            </a>
+                        </li>
                     </ul>
                 </div><!--/.nav-collapse -->
             </div>
@@ -35,13 +44,19 @@
 
         {% block body %}
         {% endblock %}
+
+        <!-- footer -->
+        <footer class="footer">
+            <div class="container">
+                <p class="text-muted"><span class="glyphicon glyphicon-copyright-mark" aria-hidden="true"></span> s.michel.freelance@gmail.com</p>
+            </div>
+        </footer>
+
         {% block javascripts %}
             <!-- jQuery (necessary for Bootstraps JavaScript plugins) -->
             <script src="{{ asset('js/jquery.js') }}"></script>
-            <!-- Include all JavaScripts, compiled by Assetic -->
+            <!-- JavaScripts, compiled by Assetic // see app\config\config.yml for src file path -->
             <script src="{{ asset('js/bootstrap.js') }}"></script>
-            <!-- Include all other JavaScripts -->
-            <script src="bootstrap-table/bootstrap-table.min.js"></script>
         {% endblock %}
     </body>
 </html>
