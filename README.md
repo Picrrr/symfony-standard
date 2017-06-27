@@ -27,7 +27,7 @@ Welcome to this litle symfony project based on [Symfony Standard Edition][2] .
 >     php bin/console server:run
 >     ```
 >     
->     [Enjoy the test here][6]  
+=> [Enjoy the test here][6]  
 
 For other details on how to download and get started with Symfony, see the
 [Installation][1] chapter of the Symfony Documentation.
