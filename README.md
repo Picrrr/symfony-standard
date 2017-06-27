@@ -23,9 +23,11 @@ Welcome to this litle symfony project based on [Symfony Standard Edition][2] .
 >
 >     ```
 >     git clone https://github.com/Picrrr/test-sts.git ./
->     composer install
+>     composer install (When ask just let default value)
 >     php bin/console server:run
 >     ```
+>     
+>     [Enjoy the test here][6]  
 
 For other details on how to download and get started with Symfony, see the
 [Installation][1] chapter of the Symfony Documentation.
@@ -38,3 +40,4 @@ released under the MIT or BSD license.
 [3]:  http://windows.php.net/download/
 [4]:  https://git-scm.com/downloads
 [5]:  https://getcomposer.org/doc/00-intro.md#using-the-installer
+[6]:  http://127.0.0.1:8000/ 
